@@ -6,7 +6,7 @@ Hi!
 This is simple config for somebody who need to use Kamailio as Loadbalancer in front of Freeswitch or Asterisk. This particular configuration will Loadbalance not only INVITEs, but registrations too.
 
 Following configuration I took as template:
-http://kamailio.org/docs/modules/4.3.x/modules/dispatcher.html
+http://kamailio.org/docs/modules/4.3.x/modules/dispatcher.html#dispatcher.ex.config
 
 I'm not an expert in Kamailio, so this config might miss something.
 
