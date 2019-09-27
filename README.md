@@ -1,16 +1,10 @@
 # dispatcher
 Simple config file of Kamailio as Loadblancer for calls and registrations
 
-Hi!
-
 This is simple config for somebody who need to use Kamailio as Loadbalancer in front of Freeswitch or Asterisk. This particular configuration will Loadbalance not only INVITEs, but registrations too.
 
 Following configuration I took as template:
-http://kamailio.org/docs/modules/4.3.x/modules/dispatcher.html#dispatcher.ex.config
-
-I'm not an expert in Kamailio, so this config might miss something.
-
-I didn't put NAT traversal, for me freeswitch works without it, maybe later I will add it if I will think that this is necessary.
+http://kamailio.org/docs/modules/5.3.x/modules/dispatcher.html#dispatcher.ex.config
 
 On freeswitch side I added following lines to sip profile config:
 
@@ -22,12 +16,10 @@ Additionnally you need to configure domain in vars.xml:
 
 \<X-PRE-PROCESS cmd="set" data="domain=ip_or_domain_name_of_kamailio_server"/>
 
-To make this configuration work you will need to add freeswitch servers to mysql db:
+To make this configuration work you will need to add freeswitch/asterisk to list file(dispather.list as example) or to mysql db. 
 
-INSERT INTO dispatcher(setid, destination, flags, description) values (1, 'sip:freeswitchip:5060', 2, 'somedescription');
+To make DB work you will need to uncomment lines related to DB and make sure that DB url is set properly and don't forget to remove line where list file is set). 
 
-ToDO:
+And off cause you will need to insert related data:
 
-1) To add working Freeswitch configurations
-
-2) To add working Asterisk configurations
+`INSERT INTO dispatcher(setid, destination, flags, priority) values (1, 'sip:freeswitchip:5060', 0, 0);`
