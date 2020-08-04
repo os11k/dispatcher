@@ -22,4 +22,7 @@ To make DB work you will need to uncomment lines related to DB and make sure tha
 
 And off cause you will need to insert related data:
 
-`INSERT INTO dispatcher(setid, destination, flags, priority) values (1, 'sip:freeswitchip:5060', 0, 0);`
+`INSERT INTO dispatcher(setid, destination, flags, priority) values (1, 'sip:freeswitchip1:5060', 0, 0);`
+`INSERT INTO dispatcher(setid, destination, flags, priority) values (1, 'sip:freeswitchip2:5060', 0, 0);`
+
+Please make sure that setid is `1` for both servers.
